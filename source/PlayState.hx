@@ -14,14 +14,14 @@ class PlayState extends FlxUIState
 	var midiIn:MidiIn;
 	var midiOut:MidiOut;
 
-	var SUBDIVISION:Int = 8;
+	var SUBDIVISION:Int = 16;
 	var interval:Float;
 
 	var timer:Float = 0;
 	var step:Int = 0;
-	var sequence = [ 48, 52, 55, 60, 48, 52, 55, 60 ];
+	var sequence = [ 0, -1, 2, -1, 4, -1, 5, -1, 7, -1, 9, -1, 11, -1, 12, -1, ];
 
-	var scale = [ 48, 50, 52, 53, 55, 57, 59, 60 ];
+	var scale = [ 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, -1 ];
 
 	var outputReady = false;
 	var inputReady = false;
@@ -80,7 +80,7 @@ class PlayState extends FlxUIState
 		setInterval( 60 );
 
 		pads = new Array<FlxUIButton>();
-		for( i in 1...9 ) {
+		for( i in 1...17 ) {
 			pads.push( cast _ui.getAsset("pad_" + i ) );
 			trace("pad_" + i, pads[i-1]);
 		}
@@ -120,9 +120,11 @@ class PlayState extends FlxUIState
 
 	function beat() {
 		step = ( step + 1 ) % ( sequence.length * 2 );
-		midiOut.sendMessage(
-			MidiMessage.ofArray( [step % 2 == 0 ? 144 : 128, sequence[ Math.floor( step / 2 ) ], 64 ] )
-		);
+		if ( scale[ sequence[ Math.floor( step / 2 ) ] ] != -1 ) {
+			midiOut.sendMessage(
+				MidiMessage.ofArray( [step % 2 == 0 ? 144 : 128, scale[ sequence[ Math.floor( step / 2 ) ] ], 64 ] )
+			);
+		}
 		play_indicator.setPosition( pads[ Math.floor( step / 2 ) ].x - 4, pads[ Math.floor( step / 2 ) ].y - 4 );
 	}
 
@@ -174,7 +176,7 @@ class PlayState extends FlxUIState
 	            			mode = "note";
 	            			active_step = params[1];
 	            		} else if ( mode == "note" ) {
-	            			sequence[ active_step ] = scale[ params[1] ];
+	            			sequence[ active_step ] = params[1];
 	            			mode = "sequence";
 	            		}
             }
