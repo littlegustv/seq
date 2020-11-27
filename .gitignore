@@ -1,0 +1,6 @@
+/dump
+/export
+*.sublime-project
+*.sublime-workspace
+android.xml
+*.keystore

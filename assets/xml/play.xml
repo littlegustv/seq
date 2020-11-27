@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<include name="definitions" />
+
+	<group name="bg"></group>
+	<group name="buttons"></group>
+
+	<sprite id="black" x="0" y="0" width="100%" height="100%" color="0xFFcdcdcd" group="bg"/>
+
+	<dropdown label="Midi Device" x="4" y="4" name="devices" width="120">
+		<text color="0x000000" align="left" size="8" font="babyblocks"></text>
+		<anchor x="left" y="top" x-flush="left" y-flush="top"></anchor>
+		<data name="device_1" label="Loading..."/>
+	</dropdown>
+	
+	<numeric_stepper x="128" y="4" step="5" min="40" max="200" value="120" decimal="0" width="80" name="bpm">
+		<text color="0x000000" align="left" size="8" font="babyblocks"></text>
+		<anchor x="left" y="top" x-flush="left" y-flush="top"></anchor>
+		<param type="string" value="bpm"/>	
+	</numeric_stepper>
+
+	<button id="play" width="32" x="-4" y="4" group="buttons" label="Play" text_x="0" text_y="0" font="babyblocks" size="8">
+		<anchor x="right" y="top" x-flush="right" y-flush="top"></anchor>
+		<param value="play" type="string"/>
+	</button>
+
+	<sprite id="pad" x="0" y="0" width="128" height="128" color="0xffffffff" group="bg">
+		<anchor x="center" y="center" x-flush="center" y-flush="center"></anchor>		
+	</sprite>
+
+
+	<button x="-36" y="-36" use_def="sequencer_button" group="buttons" label="01" name="pad_1">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="0"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="-12" y="-36" use_def="sequencer_button" group="buttons" label="02" name="pad_2">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="1"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="12" y="-36" use_def="sequencer_button" group="buttons" label="03" name="pad_3">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="2"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="36" y="-36" use_def="sequencer_button" group="buttons" label="04" name="pad_4">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="3"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="-36" y="-12" use_def="sequencer_button" group="buttons" label="05" name="pad_5">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="4"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="-12" y="-12" use_def="sequencer_button" group="buttons" label="06" name="pad_6">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="5"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="12" y="-12" use_def="sequencer_button" group="buttons" label="07" name="pad_7">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="6"/>
+		<param type="string" value="pad"/>
+	</button>
+
+	<button x="36" y="-12" use_def="sequencer_button" group="buttons" label="08" name="pad_8">
+		<anchor x="pad.center" y="pad.center" x-flush="center" y-flush="center"></anchor>
+		<param type="int" value="7"/>
+		<param type="string" value="pad"/>
+	</button>
+
+</data>

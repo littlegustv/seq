@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<!-- Buttons -->
+	<definition name="sequencer_button" width="16" height="16" text_x="0" text_y="0">
+		<text color="0xffffff" align="center" size="8" font="babyblocks">
+			<color name="up" value="0xaaaaaa"></color>
+			<color name="over" value="0xffffff"></color>
+			<color name="down" value="0xffffff"></color>
+		</text>
+		<graphic name="all" image="sequencer_button" slice9="4,4,12,12" tile="true"/>
+	</definition>
+
+</data>

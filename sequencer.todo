@@ -1,0 +1,36 @@
+Resources:
+ ☐ SOURCE CODE:       https://gitlab.com/haxe-grig
+ ☐ API & TUTORIALS:   https://grig.tech/
+ ☐ MIDI:              https://computermusicresource.com/midikeys.html
+
+Basics:
+ ✔ ability to start and stop playback @done (20-11-25 20:19)
+ ✔ ability to view/select midi devices @done (20-11-26 21:40)
+   ✔ dropdown + button @done (20-11-26 21:40)
+ ✔ startup process @done (20-11-26 21:59)
+   ✔ getports @done (20-11-26 21:40)
+     ✔ selectport @done (20-11-26 21:40)
+       ✔ loadport successfully -> READY @done (20-11-26 21:40)
+         ✔ start playing @done (20-11-26 21:59)
+ ☐ basic controls
+   ☐ simple step-sequencer
+     ☐ select step, then select note
+       ✔ basic @done (20-11-26 22:03)
+       ☐ 16 steps!
+       ☐ improved UI - show names of notes in sequence/note select mode
+       ☐ add 'rest'
+       ☐ octave select
+       ☐ add scale select
+         ☐ make sequence refer to scale, not to actual notes (so scale can change, and entire sequence will change) (??)
+   ✔ notes @done (20-11-26 22:32)
+   ✔ bpm @done (20-11-26 22:32)
+   ☐ better 'gate' control(?)
+   ☐ automation
+ ☐ advanced controls
+   ☐ pattern chaining
+   ☐ saving projects
+   ☐ saving patches?
+   ☐ microtonal support... probably not possible since midi note is sent as INT?
+
+BUGS:
+  ☐ fix NoteOn if alt-tab/close at the wrong time @critical
